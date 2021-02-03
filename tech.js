@@ -1,5 +1,18 @@
 //29095409dba9478ba9fa8f6390a1d7f0
 
+setInterval(showTime, 1000);
+function showTime(){
+let dat = new Date();
+let dt = new Date().toUTCString();
+dt = dt.slice(0, dt.length-13);
+let hours = (dat.getHours().toString().length == 1)?`0${dat.getHours()}`:`${dat.getHours()}`;
+let mins = (dat.getMinutes().toString().length == 1)?`0${dat.getMinutes()}`:`${dat.getMinutes()}`;
+let secs = (dat.getSeconds().toString().length == 1)?`0${dat.getSeconds()}`:`${dat.getSeconds()}`;
+document.querySelector(".date").innerHTML = `${dt}, ${hours}:${mins}:${secs}`;
+}
+
+
+
 let news = document.getElementById("title").textContent;
 
 let purl = "http://cors-anywhere.herokuapp.com/";

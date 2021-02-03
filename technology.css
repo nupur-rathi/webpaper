@@ -42,26 +42,31 @@
     display: flex;
     max-height: 20vh;
     height: 20vh;
-    flex-direction: row;
+    flex-direction: column;
 
 }
 
 #webpaper{
-    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 70%;
     font-size: 3.5rem;
     font-family: "Poppins", sans-serif;
     letter-spacing: 1vw;
     color: #F5EFED; 
     font-weight: 500; 
+
 }
 
 .date{
     flex-basis: 30%;
+    display: flex;
+    color: #AAAAAA;
+    font-size: 1rem !important;
 }
 
-.temp{
-    flex-basis: 30%;
-}
+
 
 #NavBar{
     border-top: 1px solid rgb(51,51,51);
@@ -77,7 +82,44 @@
     padding: 0;
 }
 
+#sbar1{
+    background-color: rgb(51,51,51);
+    display: flex; 
+    border-radius: 50px;
+    max-width: 45%;
+}
 
+.sbut{
+    background-color: transparent;
+    border: none;
+    flex-basis: 20%;
+}
+
+.dsbar{
+    flex-basis: 80%;
+}
+
+.sbar{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 10%;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    width: 100%;
+    
+}
+
+.sbut:focus{
+    outline: none;
+    border-radius: 20px;
+    background-color: black;
+}
+
+.sbar:focus{
+    outline: none;
+}
 
 #NavBar ul{
     height: 100%;
@@ -261,11 +303,29 @@
     display: none;
 }
 
+/* #sbar1{
+    display: none;
+} */
+
+#sbar1{
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 60%;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+}
+
 }
 
 @media only screen and (max-width: 800px){
     #menu {
       display: none;
+    }
+
+    .date{
+        box-sizing: border-box;
+        font-size: 0.8rem !important;
     }
 
     .sidenav{
@@ -303,9 +363,15 @@
         padding-left: 2%;
         padding-right: 2%;
         cursor: pointer;
+        flex-basis: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-
+    #sbar1{
+        flex-basis: 95%;
+    }
 
     #webpaper-heading{
         max-height: 15vh !important;
@@ -318,10 +384,11 @@
         min-height: 6vh !important;
         height: 6vh !important;
         display: flex;
-        justify-content: flex-end;
         padding-top: 1%;
         padding-bottom: 1%;
         padding-right: 5%;
+        padding-left: 5%;
+        justify-content: space-between;
 
     }
 
@@ -433,7 +500,7 @@
 
   }
 
-  @media only screen and (max-width: 800px) and (orientation: landscape){
+  /* @media only screen and (max-width: 800px) and (orientation: landscape){
     #menu {
       display: none;
     }
@@ -541,4 +608,4 @@
         text-decoration: none;
     }
 
-  }
+  } */
