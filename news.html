@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
-    <title id="title">technology</title>
+    <title id="title">news</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="technology.css">
+    <link rel="stylesheet" href="news.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,17 +16,17 @@
             <div class="date"></div>  
         </div>
         <div id="NavBar">
-            <div id="sbar1"><div class="dsbar"><input class="sbar" type="text" placeholder="Search.."></div><button class="sbut" type="submit"><i class="fa fa-search"></i></button></div>
+            <div id="sbar1"><div class="dsbar"><form><input class="sbar" type="text" placeholder="Search.."></div><button class="sbut" type="submit"><i class="fa fa-search"></i></button></form></div>
             <span id="menumob">&#9776;</span>
             <ul id="NavItems">
-                <li><a class="links" href="home.html" target="_self">Home</a></li>
-                <li><a class="links" href="world.html" target="_self">World</a></li>
-                <li><a class="links" href="sports.html" target="_self">Sports</a></li>
-                <li>Entertainment</li>
-                <li id="tech"><a class="links" href="technology.html" target="_self">Technology</a></li>
-                <li>Business</li>
-                <li>Lifestyle</li>
-                <li>Education</li>
+                <li class="home"><a class="links" href="home.html" target="_self">Home</a></li>
+                <li class="world"><a href="news.html?category=world" class="links">World</a></li>
+                <li class="sports"><a href="news.html?category=sports" class="links">Sports</a></li>
+                <li class="entertainment"><a href="news.html?category=entertainment" class="links">Entertainment</a></li>
+                <li class="technology"><a href="news.html?category=technology" class="links">Technology</a></li>
+                <li class="business"><a href="news.html?category=business" class="links">Business</a></li>
+                <li class="lifestyle"><a href="news.html?category=lifestyle" class="links">Lifestyle</a></li>
+                <li class="education"><a href="news.html?category=education" class="links">Education</a></li>
             </ul>
         </div>     
         <div id="menu">
@@ -54,5 +54,5 @@
         </div>
         
     </div> 
-    <script src="tech.js"></script>   
+    <script src="newsScript.js"></script>   
 </body>
