@@ -25,6 +25,44 @@
     background: rgb(0,0,0); 
   }
 
+.greet{
+    background-color: rgb(25,25,25);
+    grid-area: 4/1/8/17;
+    height: 30vh;
+    max-height: 30vh;
+    display: flex;
+}
+
+.greeting{
+    flex-basis: 20%;
+    padding-left: 3%;
+    padding-right: 1%;
+    padding-top: 2%;
+    box-sizing: border-box;
+}
+
+.greetimg{
+    height: 100%;
+    width: 100%;
+}
+
+.quote{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 2%;
+    justify-content: center;
+    word-spacing: 0.3rem;
+    font-size: 1.3rem;
+}
+
+.qtext{
+    box-sizing: border-box;
+    margin-bottom: 1%;
+}
+
 #main{
     display: grid;
     width: 100vw;
@@ -154,68 +192,10 @@
     text-decoration: none;
 }
 
-#menu{
-    height: 73vh;
-    max-height: 73vh;
-    box-sizing: border-box;
-    grid-area: 4/1/15/2;
-    background-color: rgb(30,30,30);
-    display: flex;
-    flex-direction: column;
-    width: 14vw;
-}
-
-.menuhead{
-    border-top: 1px solid rgb(51,51,51);
-    border-bottom: 1px solid rgb(51,51,51);
-    flex-basis: 9%;
-    display: flex;
-    flex-direction: row;
-    font-size: 1rem;
-    letter-spacing: 3px;
-    box-sizing: border-box;
-}
-
-#menup{
-    display: flex;
-    height: 100%;
-    font-size: 1.1rem;
-    width: 85%;
-    align-items: center;
-    padding-left: 15%;
-}
-
-.menuhead i{
-    width: 15%;
-}
-
-#menubody{
-    flex-basis: 91%;
-    display: flex;
-    box-sizing: border-box;
-    padding-top: 15%;
-    padding-bottom: 15%;
-    padding-right: 18%;
-    padding-left: 18%;
-    flex-direction: column;
-    font-size: 1rem;
-    overflow-y: auto;
-}
-
-.menuitems{
-    margin-bottom: 10px;
-    color: rgb(150,150,150);
-    text-decoration: none;
-}
-
-.menuitems:hover{
-    cursor: pointer;
-    color: #F5EFED;
-}
 
 #news{
-    height: 73vh;
-    grid-area: 4/2/15/17;
+    height: 43vh;
+    grid-area: 8/1/20/17;
     box-sizing: border-box;
     padding: 50px;
     background-color: rgb(25,25,25);
@@ -316,9 +296,14 @@
 
 }
 
+.home{
+    background-color: rgb(15,15,15);
+}
+
 @media only screen and (max-width: 800px){
-    #menu {
-      display: none;
+
+    .greet{
+        display: none;
     }
 
     .date{
@@ -502,113 +487,3 @@
     }
 
   }
-
-  /* @media only screen and (max-width: 800px) and (orientation: landscape){
-    #menu {
-      display: none;
-    }
-
-    #webpaper-heading{
-        max-height: 15vh !important;
-        min-height: 15vh !important;
-        height: 15vh !important;
-    }
-
-    #NavBar{
-        max-height: 5vh !important;
-        min-height: 5vh !important;
-        height: 5vh !important;
-    }
-
-    #news{
-        grid-area: 4/1/auto/17;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        box-sizing: border-box;
-        padding: 0%;
-        max-height: 80vh !important;
-        min-height: 80vh !important;
-        height: 80vh !important;
-    }
-
-    .new{
-        margin: 4%;
-        margin-bottom: 0%;
-        display: flex;
-        flex-direction: column-reverse;
-        box-sizing: border-box;
-        border: 1px solid rgb(51,51,51);
-        height: 60vh;
-        min-height: 60vh;
-        overflow: hidden;
-        max-height: 60vh;
-        background-color: rgb(30,30,30);
-        padding: 0;
-        border-radius: 10px;
-        font-size: 3rem !important;
-    }
-
-    .vid{
-        display:none;
-    }
-
-    .iframe{
-        display: none;
-    }
-
-    .newstitle{
-        flex-basis: 100%;
-        box-sizing: border-box;
-        padding-left: 3.5%;
-        padding-right: 3.5%;
-        font-size: 1.2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 4%;
-    }
-
-
-    .newscont{
-        display: none;
-    }
-
-    .paras{
-        display: flex;
-        flex-basis: 100% !important;
-        box-sizing: border-box;
-        padding-left: 0px !important;
-        text-align: none !important;
-        flex-direction: column;
-    }
-
-    #NavBar ul{
-        display: none;
-    }
-
-    #webpaper{
-        font-size: 3rem;
-    }
-
-    .viewfulln{
-        display: flex;
-        margin-top: 2%;
-        font-size: 0.75rem;
-        border: rgb(170,170,170) solid 1px;
-        box-sizing: border-box;
-        border-radius: 5px;
-        width: fit-content;
-        justify-content: center;
-        align-items: center;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        padding-left: 2%;
-        padding-right: 2%;
-    }
-
-    .viewfull{
-        color: rgb(170,170,170);
-        text-decoration: none;
-    }
-
-  } */

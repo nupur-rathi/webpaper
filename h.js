@@ -11,6 +11,27 @@ let secs = (dat.getSeconds().toString().length == 1)?`0${dat.getSeconds()}`:`${d
 document.querySelector(".date").innerHTML = `${dt}, ${hours}:${mins}:${secs}`;
 }
 
+//greeting img
+
+let dat = new Date();
+let hrs = parseInt(dat.getHours());
+if((hrs >= 21) || (hrs >= 0 && hrs <= 4))
+{
+    document.querySelector(".greetimg").src = "gn.gif";
+}
+else if(hrs >= 17 && hrs <= 20)
+{
+    document.querySelector(".greetimg").src = "ge.gif";
+}
+else if(hrs >= 12 && hrs <= 16)
+{
+    document.querySelector(".greetimg").src = "ga.gif";
+}
+else if(hrs >= 5 && hrs <= 11)
+{
+    document.querySelector(".greetimg").src = "gm.gif";
+}
+
 // menu sidenav
 
 const ain = document.getElementsByClassName("ainnav");
@@ -28,38 +49,29 @@ closebtn.addEventListener('click', function(){
   ain[j].style.fontSize= "0rem";
 })
 
-//news
+//quotes
 
-const params = new URLSearchParams(window.location.search);
-const news = params.get('category');
-const q = params.get('q');
-
-//sidenav
-
-sideNavArr = {
-  entertainment: ['TV series', 'Web Series', 'Anime', 'Movies', 'Actors', 'Actressess', 'Animated Movies'],
-  education: ['Exams', 'Jobs', 'Schools', 'Universities and Institutes', 'Exam Results'],
-  lifestyle: ['Coronavirus','Food','Travel','Books', 'Fashion', 'Home', 'Beauty', 'Health and Fitness', 'Relationships'],
-  sports: ['Cricket', 'Football', 'Basketball', 'Badminton', 'Lawn Tennis', 'Hockey', 'Athletics', 'Shooting', 'Volleyball', 'Chess', 'Boxing', 'Wrestling', 'Swimming', 'Olympics'],
-  business: ['International Business', 'Trade', 'Budget', 'Banking', 'Business Companies', 'E-Commerce'],
-  technology: ['Gadgets', 'Mobiles', 'Computer', 'Laptops', 'Cars', 'Automobiles', 'Tech Companies'],
-  world: ['Geography', 'Religion', 'Weather', 'Asia', 'North America', 'Europe', 'South America', 'Africa', 'Australia']
-};
-
-const page = sideNavArr[`${q}`];
-const menubody = document.getElementById('menubody');
-
-for(let i=0; i<page.length; i++)
-{
-  console.log(page[i]);
-  menuitems = `<a href="news.html?category=${page[i]}&q=${q}" class="menuitems">${page[i]}</a>`;
-  menubody.insertAdjacentHTML('beforeend', menuitems);
-}
+let qurl = "https://type.fit/api/quotes";
+fetch(qurl)
+.then(function(response){
+  return (response.json());
+})
+.then(function(data){
+  let l = data.length;
+  let randNum = Math.floor(Math.random()*l);
+  let quote = data[randNum].text;
+  let author = data[randNum].author;
+  document.querySelector('.qtext').textContent = `${quote}`;
+  if(author == null)
+  author = "anonymous";
+  document.querySelector('.qauthor').textContent = `-${author}`;
+})
 
 //news
+
 let purl = "http://cors-anywhere.herokuapp.com/";
 
-let url = `${purl}https://newsapi.org/v2/everything?q=${news}&apiKey=29095409dba9478ba9fa8f6390a1d7f0`;
+let url = `${purl}https://newsapi.org/v2/top-headlines?country=in&apiKey=29095409dba9478ba9fa8f6390a1d7f0`;
 let newsContainer = document.getElementById("news");
 
 fetch(url)
@@ -68,7 +80,6 @@ fetch(url)
 })
 .then(function(data){
 
-  document.querySelector(`.${news}`).style.backgroundColor = "rgb(15,15,15)";
     let arr = [];
 for(let i=0; i<data.articles.length; i++)
   {  
@@ -105,4 +116,3 @@ newsContainer.insertAdjacentHTML("beforeend", htmlDocAppend);
   ele.style.backgroundImage = `linear-gradient(transparent 15%, rgba(30,30,30,1) 90%), url(${arr[i]})`;
   }
 });
-
