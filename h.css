@@ -52,7 +52,7 @@
     flex-direction: column;
     padding-top: 2%;
     padding-left: 5%;
-    padding-right: 2%;
+    padding-right: 3%;
     justify-content: center;
     word-spacing: 0.3rem;
     font-size: 1.3rem;
@@ -104,6 +104,13 @@
     font-size: 1rem !important;
 }
 
+.links{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 #NavBar{
@@ -303,7 +310,27 @@
 @media only screen and (max-width: 800px){
 
     .greet{
+        grid-area: 4/1/7/17;
+    }
+    
+    .greeting{
         display: none;
+    }
+
+    .quote{
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5% !important;
+        padding-left: 3%;
+        padding-right: 3%;
+        font-size: 1rem;
+        justify-content: flex-start;
+    }
+    
+    .qtext{
+        box-sizing: border-box;
+        margin-bottom: 1%;
     }
 
     .date{
@@ -396,15 +423,17 @@
         padding-bottom: 3%;
     }
 
+
+
     #news{
-        grid-area: 4/1/auto/17;
+        grid-area: 7/1/auto/17;
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
         padding: 0%;
-        max-height: 79vh !important;
-        min-height: 79vh !important;
-        height: 79vh !important;
+        max-height: 60vh !important;
+        min-height: 60vh !important;
+        height: 50vh !important;
     }
     
     .new{

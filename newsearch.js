@@ -34,34 +34,20 @@ const params = new URLSearchParams(window.location.search);
 const news = params.get('category');
 const q = params.get('q');
 
-//sidenav
+//sbar
 
-sideNavArr = {
-  entertainment: ['TV series', 'Web Series', 'Anime', 'Movies', 'Actors', 'Actressess', 'Animated Movies'],
-  education: ['Exams', 'Jobs', 'Schools', 'Universities and Institutes', 'Exam Results'],
-  lifestyle: ['Coronavirus','Food','Travel','Books', 'Fashion', 'Home', 'Beauty', 'Health and Fitness', 'Relationships'],
-  sports: ['Cricket', 'Football', 'Basketball', 'Badminton', 'Lawn Tennis', 'Hockey', 'Athletics', 'Shooting', 'Volleyball', 'Chess', 'Boxing', 'Wrestling', 'Swimming', 'Olympics'],
-  business: ['International Business', 'Trade', 'Budget', 'Banking', 'Business Companies', 'E-Commerce'],
-  technology: ['Gadgets', 'Mobiles', 'Computer', 'Laptops', 'Cars', 'Automobiles', 'Tech Companies'],
-  world: ['Geography', 'Religion', 'Weather', 'Asia', 'North America', 'Europe', 'South America', 'Africa', 'Australia']
-};
-
-const page = sideNavArr[`${q}`];
-const menubody = document.getElementById('menubody');
-
-for(let i=0; i<page.length; i++)
-{
-  menuitems = `<a href="news.html?category=${page[i]}&q=${q}" class="menuitems">${page[i]}</a>`;
-  menubody.insertAdjacentHTML('beforeend', menuitems);
-}
-
+document.querySelector('.sbut').addEventListener('click', function sbar(){
+  let cat = document.querySelector('.sbar').value;
+  let link = `newsearch.html?category=cat`;
+  console.log(link);
+  //window.location.href = link;
+});
 
 //news
 let purl = "http://cors-anywhere.herokuapp.com/";
 
-let url = `https://newsapi.org/v2/everything?q=${news}&apiKey=29095409dba9478ba9fa8f6390a1d7f0`;
+let url = `${purl}http://newsapi.org/v2/everything?q=${news}&apiKey=29095409dba9478ba9fa8f6390a1d7f0`;
 let newsContainer = document.getElementById("news");
-document.querySelector(`.${news}`).style.backgroundColor = "rgb(15,15,15)";
 
 fetch(url)
 .then(function(response){
